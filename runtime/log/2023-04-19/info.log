@@ -1,0 +1,10 @@
+[github.com/feiria/go-template]2023/04/19 - 18:35:15.203	[34minfo[0m	D:/Code/GO/go-template/cmd/main.go:40	API Server start at 0.0.0.0:8866
+[github.com/feiria/go-template]2023/04/19 - 18:35:22.883	[34minfo[0m	D:/Code/GO/go-template/pkg/config/zap.go:177	POST|/api/hello/auth|200|::1
+
+[github.com/feiria/go-template]2023/04/19 - 18:35:34.978	[34minfo[0m	D:/Code/GO/go-template/pkg/config/zap.go:177	GET|/api/hello/hello|200|::1
+
+[github.com/feiria/go-template]2023/04/19 - 18:35:54.715	[34minfo[0m	D:/Code/GO/go-template/cmd/main.go:51	API Server Shutdown......
+[github.com/feiria/go-template]2023/04/19 - 18:35:58.576	[34minfo[0m	D:/Code/GO/go-template/cmd/main.go:39	API Server start at 0.0.0.0:8866
+[github.com/feiria/go-template]2023/04/19 - 18:36:07.292	[34minfo[0m	D:/Code/GO/go-template/pkg/config/zap.go:177	GET|/api/hello/hello|200|::1
+
+[github.com/feiria/go-template]2023/04/19 - 18:36:13.724	[34minfo[0m	D:/Code/GO/go-template/cmd/main.go:50	API Server Shutdown......
