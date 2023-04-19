@@ -1,5 +1,4 @@
 # go-template
----
 ```go-template```是基于Golang的API模板项目，提供了一些常用的功能Demo，以供参考学习！
 
 ## 目录结构
