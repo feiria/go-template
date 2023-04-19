@@ -54,4 +54,4 @@ script:     存放脚本文件
 - [flipped-aurora/gin-vue-admin](https://github.com/flipped-aurora/gin-vue-admin) 基于vite+vue3+gin搭建的开发基础平台，集成多项开发必备功能。
 
 ## 联系作者
-![联系作者](https://github.com/feiria/go-template/assets/img.png)
+![联系作者](https://github.com/feiria/go-template/tree/master/assets/img.png)
