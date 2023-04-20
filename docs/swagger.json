@@ -1,0 +1,134 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "接口文档",
+        "title": "接口文档",
+        "termsOfService": "https://github.com/feiria/go-template",
+        "contact": {},
+        "version": "1.0.0"
+    },
+    "host": "localhost:8866",
+    "basePath": "/api",
+    "paths": {
+        "/hello/auth": {
+            "post": {
+                "description": "你好",
+                "tags": [
+                    "Hello"
+                ],
+                "summary": "HelloNeedAuth",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/go-template_internal_types_response.Response"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/definitions/go-template_internal_types_response.HelloResponse"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/hello/hello": {
+            "get": {
+                "description": "你好",
+                "tags": [
+                    "Hello"
+                ],
+                "summary": "Hello",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/go-template_internal_types_response.Response"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/definitions/go-template_internal_types_response.HelloResponse"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/hello/token": {
+            "get": {
+                "description": "获取token",
+                "tags": [
+                    "Hello"
+                ],
+                "summary": "HelloGetToken",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/go-template_internal_types_response.Response"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/definitions/go-template_internal_types_response.JwtResponse"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "go-template_internal_types_response.HelloResponse": {
+            "type": "object",
+            "properties": {
+                "word": {
+                    "type": "string"
+                }
+            }
+        },
+        "go-template_internal_types_response.JwtResponse": {
+            "type": "object",
+            "properties": {
+                "expiresAt": {
+                    "type": "integer"
+                },
+                "token": {
+                    "type": "string"
+                }
+            }
+        },
+        "go-template_internal_types_response.Response": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer"
+                },
+                "data": {},
+                "msg": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

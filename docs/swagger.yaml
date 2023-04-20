@@ -1,0 +1,79 @@
+basePath: /api
+definitions:
+  go-template_internal_types_response.HelloResponse:
+    properties:
+      word:
+        type: string
+    type: object
+  go-template_internal_types_response.JwtResponse:
+    properties:
+      expiresAt:
+        type: integer
+      token:
+        type: string
+    type: object
+  go-template_internal_types_response.Response:
+    properties:
+      code:
+        type: integer
+      data: {}
+      msg:
+        type: string
+    type: object
+host: localhost:8866
+info:
+  contact: {}
+  description: 接口文档
+  termsOfService: https://github.com/feiria/go-template
+  title: 接口文档
+  version: 1.0.0
+paths:
+  /hello/auth:
+    post:
+      description: 你好
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/go-template_internal_types_response.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/go-template_internal_types_response.HelloResponse'
+              type: object
+      summary: HelloNeedAuth
+      tags:
+      - Hello
+  /hello/hello:
+    get:
+      description: 你好
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/go-template_internal_types_response.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/go-template_internal_types_response.HelloResponse'
+              type: object
+      summary: Hello
+      tags:
+      - Hello
+  /hello/token:
+    get:
+      description: 获取token
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/go-template_internal_types_response.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/go-template_internal_types_response.JwtResponse'
+              type: object
+      summary: HelloGetToken
+      tags:
+      - Hello
+swagger: "2.0"
