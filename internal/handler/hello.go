@@ -7,7 +7,6 @@ import (
 	"go-template/internal/logic"
 	"go-template/internal/types/request"
 	"go-template/internal/types/response"
-	"go-template/middleware"
 	"go.uber.org/zap"
 )
 
@@ -40,17 +39,19 @@ func (h *HelloHandler) HelloNeedAuth(c *gin.Context) {
 }
 
 func (h *HelloHandler) HelloGetToken(c *gin.Context) {
-	token := c.Request.Header.Get("x-token")
-	TokenNext(request.BaseClaims{
+	claims := request.BaseClaims{
 		ID:   26,
 		Uuid: "5d586a1f-3a02-4fca-860e-4f3a1de5c063",
 		Name: "gailun2",
-	}, token, c)
+	}
+	// check claims, if true, next
+	token := c.Request.Header.Get("x-token")
+	tokenNext(claims, token, c)
 	return
 }
 
-func TokenNext(baseClaims request.BaseClaims, t string, c *gin.Context) {
-	j := &middleware.JWT{SigningKey: []byte(viper.GetString("jwt.signing-key"))}
+func tokenNext(baseClaims request.BaseClaims, t string, c *gin.Context) {
+	j := &request.JWT{SigningKey: []byte(viper.GetString("jwt.signing-key"))}
 	claims := j.CreateClaims(baseClaims)
 
 	var token string
