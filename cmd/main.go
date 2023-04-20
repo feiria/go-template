@@ -4,6 +4,7 @@ import (
 	"context"
 	"flag"
 	"fmt"
+	_ "go-template/docs"
 	"go-template/global"
 	"go-template/pkg/config"
 	"net/http"
@@ -12,6 +13,13 @@ import (
 	"syscall"
 	"time"
 )
+
+//	@title			接口文档
+//	@version		1.0.0
+//	@description	接口文档
+//	@host			localhost:8866
+//	@BasePath		/api
+//	@termsOfService	https://github.com/feiria/go-template
 
 var (
 	env        string

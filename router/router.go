@@ -16,6 +16,9 @@ func New(helloHandler *handler.HelloHandler) *Router {
 }
 
 func (r *Router) Register(rootGroup *gin.RouterGroup) {
+	// swagger
+	r.registerSwaggerRouter(rootGroup)
+
 	//hello
 	r.registerHelloRouter(rootGroup)
 
