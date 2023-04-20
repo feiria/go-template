@@ -6,6 +6,7 @@ import (
 	"fmt"
 	_ "go-template/docs"
 	"go-template/global"
+	"go-template/internal/logic"
 	"go-template/pkg/config"
 	"net/http"
 	"os"
@@ -36,7 +37,12 @@ func main() {
 	config.Init(env)
 
 	signal.Notify(signalChan, os.Interrupt, syscall.SIGTERM)
+
+	// 监听中止信号
 	go gracefulShutdown()
+	// 开启定时任务
+	go logic.CronExample()
+
 	app, cancel, err := initServer()
 	defer cancel()
 	if err != nil {
