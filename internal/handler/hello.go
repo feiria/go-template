@@ -20,11 +20,13 @@ func NewHelloHandler(helloLogic logic.HelloLogic) *HelloHandler {
 	}
 }
 
-// @Summary		Hello
-// @Description	你好
-// @Tags			Hello
-// @Success		200	{object}	response.Response{data=response.HelloResponse}
-// @Router			/hello/hello [GET]
+// Hello
+//
+//	@Summary		Hello
+//	@Description	你好
+//	@Tags			Hello
+//	@Success		200	{object}	response.Response{data=response.HelloResponse}
+//	@Router			/hello/hello [GET]
 func (h *HelloHandler) Hello(c *gin.Context) {
 	resp, err := h.helloLogic.HelloAPI()
 	if err != nil {
@@ -34,11 +36,13 @@ func (h *HelloHandler) Hello(c *gin.Context) {
 	return
 }
 
-// @Summary		HelloNeedAuth
-// @Description	你好
-// @Tags			Hello
-// @Success		200	{object}	response.Response{data=response.HelloResponse}
-// @Router			/hello/auth [POST]
+// HelloNeedAuth
+//
+//	@Summary		HelloNeedAuth
+//	@Description	你好
+//	@Tags			Hello
+//	@Success		200	{object}	response.Response{data=response.HelloResponse}
+//	@Router			/hello/auth [POST]
 func (h *HelloHandler) HelloNeedAuth(c *gin.Context) {
 	resp, err := h.helloLogic.HelloAPI()
 	if err != nil {
@@ -48,11 +52,13 @@ func (h *HelloHandler) HelloNeedAuth(c *gin.Context) {
 	return
 }
 
-// @Summary		HelloGetToken
-// @Description	获取token
-// @Tags			Hello
-// @Success		200	{object}	response.Response{data=response.JwtResponse}
-// @Router			/hello/token [GET]
+// HelloGetToken
+//
+//	@Summary		HelloGetToken
+//	@Description	获取token
+//	@Tags			Hello
+//	@Success		200	{object}	response.Response{data=response.JwtResponse}
+//	@Router			/hello/token [GET]
 func (h *HelloHandler) HelloGetToken(c *gin.Context) {
 	claims := request.BaseClaims{
 		ID:   26,
