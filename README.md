@@ -39,12 +39,13 @@ script:     存放脚本文件
 ## 集成组件
 1. 支持 [viper](https://github.com/spf13/viper) 组件，用以解析配置文件
 2. 支持 [gorm](https://gorm.io/gorm) 组件，用以连接数据库
-3. 支持 [zap](https://go.uber.org/zap) 组件，用以收集日志
-4. 支持 RESTFUL，用以规范接口
-5. 支持 [Swagger](https://github.com/swaggo/gin-swagger) 组件，用以生成接口文档
-6. 支持 [websocket](https://github.com/gorilla/websocket)，实现实时通讯
-7. 支持 [cron](https://github.com/jakecoffman/cron)， 实现定时任务
-8. 支持 [jwt](https://github.com/golang-jwt/jwt) 组件，实现权限管理
+3. 支持 [gormt](https://github.com/xxjwxc/gormt) 组件，用以数据库映射
+4. 支持 [zap](https://go.uber.org/zap) 组件，用以收集日志
+5. 支持 RESTFUL，用以规范接口
+6. 支持 [Swagger](https://github.com/swaggo/gin-swagger) 组件，用以生成接口文档
+7. 支持 [websocket](https://github.com/gorilla/websocket)，实现实时通讯
+8. 支持 [cron](https://github.com/jakecoffman/cron)， 实现定时任务
+9. 支持 [jwt](https://github.com/golang-jwt/jwt) 组件，实现权限管理
 
 ## Acknowledgments
 以下项目对```go-template```有重大参考意义
