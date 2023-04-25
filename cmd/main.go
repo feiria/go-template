@@ -4,12 +4,9 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"github.com/spf13/viper"
 	_ "go-template/docs"
 	"go-template/global"
-	"go-template/internal/logic"
 	"go-template/pkg/config"
-	"log"
 	"net/http"
 	_ "net/http/pprof"
 	"os"
@@ -44,11 +41,11 @@ func main() {
 	// 监听中止信号
 	go gracefulShutdown()
 	// 开启定时任务
-	go logic.CronExample()
+	//go logic.CronExample()
 	// 开启 pprof 性能分析
-	go func() {
-		log.Println(http.ListenAndServe(viper.GetString("server.addr"), nil))
-	}()
+	//go func() {
+	//	log.Println(http.ListenAndServe(viper.GetString("server.addr"), nil))
+	//}()
 
 	app, cancel, err := initServer()
 	defer cancel()

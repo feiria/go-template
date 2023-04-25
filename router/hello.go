@@ -6,10 +6,14 @@ import (
 )
 
 func (r *Router) registerHelloRouter(Router *gin.RouterGroup) {
+	helloRouterAllowCors := Router.Group("hello").Use(middleware.Cors())
+	{
+		helloRouterAllowCors.GET("/hello", r.helloHandler.Hello)
+	}
+
 	helloRouter := Router.Group("hello")
 	{
 		helloRouter.GET("/token", r.helloHandler.HelloGetToken)
-		helloRouter.GET("/hello", r.helloHandler.Hello)
 	}
 
 	helloRouterNeedToken := Router.Group("hello").Use(middleware.JWTAuth())
